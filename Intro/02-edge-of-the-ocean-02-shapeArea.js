@@ -1,31 +1,19 @@
-/*
-Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
+/**
+ * Dado um inteiro, encontrar a área do polígono n-interessante
+ * @param {number} n - Inteiro
+ * @returns {number} - A área do polígono n-interessante
+ */
+const shapeArea = n => (n === 1 ? 1 : n > 1 ? Math.pow(n, 2) + Math.pow(n - 1, 2) : null)
 
-A 1-interesting polygon is just a square with a side of length 1. An n-interesting polygon is obtained by taking the n - 1-interesting polygon and appending 1-interesting polygons to its rim, side by side. You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
+// SE o inteiro fornecido for 1
+// ENTÃO, seguindo a regra apresentada a área é 1
+// SENÃO, SE o inteiro for maior que 1
+// Somar n^2 com (n-1)^2
 
-https://codefightsuserpics.s3.amazonaws.com/tasks/shapeArea/img/area.png?_tm=1491302317375
-
-Example
-
-For n = 2, the output should be
-shapeArea(n) = 5;
-For n = 3, the output should be
-shapeArea(n) = 13.
-Input/Output
-
-[execution time limit] 4 seconds (js)
-
-[input] integer n
-
-Guaranteed constraints:
-1 ≤ n < 104.
-
-[output] integer
-
-The area of the n-interesting polygon.
-*/
-
-const shapeArea = n => {
-  if (n === 1) return 1
-  if (n > 1) return Math.pow(n, 2) + Math.pow(n - 1, 2)
+{
+  // Forma alternativa utilizando ES5
+  function shapeArea(n) {
+    if (n === 1) return 1
+    if (n > 1) return Math.pow(n, 2) + Math.pow(n - 1, 2)
+  }
 }
